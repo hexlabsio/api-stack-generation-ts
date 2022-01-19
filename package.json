@@ -48,11 +48,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hexlabsio/apigateway-ts.git"
+    "url": "git+https://github.com/hexlabsio/api-stack-generation-ts.git"
   },
   "author": "hexlabs",
   "bugs": {
-    "url": "https://github.com/hexlabsio/schema-api-ts/issues"
+    "url": "https://github.com/hexlabsio/api-stack-generation-ts/issues"
   },
   "husky": {
     "hooks": {
@@ -73,12 +73,11 @@
       "js"
     ]
   },
-  "homepage": "https://github.com/hexlabsio/schema-api-ts#readme",
-  "peerDependencies": {
-    "@hexlabs/http-api-ts": "^1.1.31",
-    "@hexlabs/lambda-api-ts": "^0.1.12"
-  },
+  "homepage": "https://github.com/hexlabsio/api-stack-generation-ts#readme",
   "devDependencies": {
+    "@aws-cdk/assets": "^1.139.0",
+    "@aws-cdk/region-info": "^2.8.0",
+    "constructs": "^10.0.37",
     "@types/jest": "^24.9.1",
     "@types/node": "^12.12.14",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
