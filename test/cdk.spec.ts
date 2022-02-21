@@ -35,4 +35,21 @@ describe('CDK Generator', () => {
             },
         });
     })
+
+    it('should generate api with root path', () => {
+        const app = new cdk.App();
+        const stack = new cdk.Stack(app, 'TestStack');
+        const api = new RestApi(stack, 'TestApi');
+        const lambda = testLambda(stack);
+        const integration = new LambdaIntegration(lambda);
+        CdkGenerator.apiFromPaths(api, integration, {'/': {methods: ['GET']}});
+        const template = Template.fromStack(stack);
+        template.hasResource("AWS::ApiGateway::RestApi", {});
+        template.resourceCountIs("AWS::ApiGateway::Method", 1);
+        template.hasResource("AWS::ApiGateway::Method",{
+            Properties: {
+                HttpMethod: "GET"
+            },
+        });
+    })
 })
